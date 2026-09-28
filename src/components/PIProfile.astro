@@ -1,0 +1,97 @@
+---
+import type { Person } from '../lib/data';
+import { blockMd } from '../lib/format';
+import Links from './Links.astro';
+
+interface Props {
+  pi: Person;
+}
+const { pi } = Astro.props;
+const img = pi.portrait ?? (pi.photo ? `/images/people/${pi.photo}` : undefined);
+---
+
+<section class="pi">
+  {img && <img src={img} alt={pi.name} loading="lazy" />}
+  <div>
+    <h3>
+      {pi.name}
+      {pi.name_ko && <span class="muted ko">{pi.name_ko}</span>}
+    </h3>
+    {
+      pi.title.length > 0 && (
+        <p class="muted title">
+          {pi.title.map((t, i) => (
+            <>
+              {i > 0 && <br />}
+              {t}
+            </>
+          ))}
+        </p>
+      )
+    }
+    {pi.bio && <Fragment set:html={blockMd(pi.bio)} />}
+    {
+      pi.education.length > 0 && (
+        <ul class="edu">
+          {pi.education.map((e) => {
+            // Put a trailing "(...)" such as "(Advisor: ...)" on its own line
+            const i = e.indexOf(' (');
+            return i < 0 ? (
+              <li>{e}</li>
+            ) : (
+              <li>
+                {e.slice(0, i)}
+                <br />
+                <span class="muted">{e.slice(i + 1)}</span>
+              </li>
+            );
+          })}
+        </ul>
+      )
+    }
+    <Links links={pi.links} />
+  </div>
+</section>
+
+<style>
+  .pi {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.75rem;
+    align-items: start;
+  }
+  .pi img {
+    border-radius: var(--radius);
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    width: 100%;
+  }
+  h3 {
+    margin-top: 0;
+    font-size: 1.35rem;
+  }
+  .ko {
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0.4rem;
+  }
+  .title {
+    margin: -0.25rem 0 0.75rem;
+  }
+  .edu {
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+  }
+  .edu li + li {
+    margin-top: 0.3rem;
+  }
+  @media (max-width: 640px) {
+    .pi {
+      grid-template-columns: 1fr;
+    }
+    .pi img {
+      max-width: 220px;
+    }
+  }
+</style>

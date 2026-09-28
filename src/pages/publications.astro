@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import PubItem from '../components/PubItem.astro';
+import { normName as norm } from '../lib/bibtex';
+import { getPeople, getPublicationsByYear } from '../lib/data';
+
+const groups = await getPublicationsByYear();
+const CATEGORY_LABELS = [
+  ['preprint', 'Preprints'],
+  ['journal', 'Journal Articles'],
+  ['conference', 'Conference Papers'],
+  ['workshop', 'Workshop Papers'],
+] as const;
+const highlight = new Set((await getPeople()).map((p) => norm(p.name)));
+---
+
+<Base title="Publications">
+  <h1>Publications</h1>
+  <p class="muted">
+    Lab members are shown in <strong>bold</strong>; <sup>*</sup> denotes co-first authors and <sup>†</sup> co-corresponding authors. For a complete list, see{' '}
+    <a href="https://scholar.google.co.kr/citations?user=cH2rjfIAAAAJ">Google Scholar</a>.
+  </p>
+  {
+    groups.map(([year, pubs]) => (
+      <section>
+        <h2>{year}</h2>
+        {CATEGORY_LABELS.map(([category, label]) => {
+          const items = pubs.filter((p) => p.category === category);
+          return (
+            items.length > 0 && (
+              <>
+                <h3>{label}</h3>
+                <ul class="pubs">
+                  {items.map((pub) => (
+                    <PubItem pub={pub} highlight={highlight} />
+                  ))}
+                </ul>
+              </>
+            )
+          );
+        })}
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  h3 {
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 1.5rem 0 0.25rem;
+  }
+  .pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

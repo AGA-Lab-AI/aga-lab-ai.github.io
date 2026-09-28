@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsList from '../components/NewsList.astro';
+import { getNews } from '../lib/data';
+
+const news = await getNews();
+const years = [...new Set(news.map((n) => n.date.slice(0, 4)))];
+---
+
+<Base title="News">
+  <h1>News</h1>
+  {
+    years.map((y) => (
+      <>
+        <h2>{y}</h2>
+        <NewsList items={news.filter((n) => n.date.startsWith(y))} />
+      </>
+    ))
+  }
+</Base>

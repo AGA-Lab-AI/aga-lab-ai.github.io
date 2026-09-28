@@ -1,0 +1,134 @@
+---
+import { normName as norm } from '../lib/bibtex';
+
+interface Props {
+  pub: {
+    id: string;
+    title: string;
+    authors: string[];
+    equal: string[];
+    corresponding: string[];
+    venue: string;
+    note?: string;
+    links: Record<string, string>;
+    bibtex: string;
+  };
+  /** Names to show in bold (lab members). */
+  highlight: Set<string>;
+}
+const { pub, highlight } = Astro.props;
+const titleHref = pub.links.paper ?? pub.links.arXiv ?? pub.links.pdf;
+const LABELS: Record<string, string> = {
+  paper: 'Paper', arXiv: 'arXiv', pdf: 'PDF', code: 'Code', project: 'Project',
+  slides: 'Slides', poster: 'Poster', video: 'Video',
+};
+---
+
+<li class="pub" id={pub.id}>
+  <div class="title">
+    {titleHref ? <a href={titleHref} target="_blank" rel="noopener">{pub.title}</a> : pub.title}
+  </div>
+  <div class="authors">
+    {
+      pub.authors.map((a, i) => (
+        <>
+          {highlight.has(norm(a)) ? <strong>{a}</strong> : a}
+          {pub.equal.includes(a) && <sup title="Co-first author">*</sup>}
+          {pub.corresponding.includes(a) && <sup title="Co-corresponding author">†</sup>}
+          {i < pub.authors.length - 1 && ', '}
+        </>
+      ))
+    }
+  </div>
+  <div class="meta">
+    <span class="venue">{pub.venue}</span>
+    {pub.note && <span class="badge">{pub.note}</span>}
+    {
+      Object.entries(pub.links).map(([k, v]) => (
+        <a class="tag" href={v} target="_blank" rel="noopener">{LABELS[k] ?? k}</a>
+      ))
+    }
+    <details>
+      <summary class="tag">BibTeX</summary>
+      <pre>{pub.bibtex}</pre>
+    </details>
+  </div>
+</li>
+
+<style>
+  .pub {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .title {
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .title a {
+    color: var(--fg);
+  }
+  .title a:hover {
+    color: var(--accent);
+  }
+  .authors {
+    font-size: 0.93rem;
+    color: var(--muted);
+    margin: 0.15rem 0 0.3rem;
+  }
+  .authors strong {
+    color: var(--fg);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+  .venue {
+    font-style: italic;
+    margin-right: 0.3rem;
+  }
+  .badge {
+    background: #fff3d6;
+    color: #8a5a00;
+    border-radius: 4px;
+    padding: 0 0.45rem;
+    font-weight: 600;
+  }
+  .tag {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0 0.45rem;
+    cursor: pointer;
+    color: var(--accent);
+    list-style: none;
+  }
+  .tag:hover {
+    background: var(--accent-soft);
+    text-decoration: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details {
+    display: contents;
+  }
+  details[open] {
+    display: block;
+    width: 100%;
+  }
+  details[open] summary {
+    display: inline-block;
+  }
+  pre {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.75rem;
+    overflow-x: auto;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin: 0.5rem 0 0;
+  }
+</style>

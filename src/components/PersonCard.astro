@@ -1,0 +1,93 @@
+---
+import type { Person } from '../lib/data';
+import { blockMd } from '../lib/format';
+import Links from './Links.astro';
+
+interface Props {
+  person: Person;
+}
+const { person: p } = Astro.props;
+const initials = p.name
+  .split(/\s+/)
+  .map((w) => w[0])
+  .join('')
+  .slice(0, 2);
+const meta = [p.program, p.since && `since ${p.since}`].filter(Boolean).join(', ');
+---
+
+<article class="person">
+  {
+    p.photo ? (
+      <img src={`/images/people/${p.photo}`} alt={p.name} loading="lazy" />
+    ) : (
+      <div class="placeholder" aria-hidden="true">{initials}</div>
+    )
+  }
+  <div class="info">
+    <div class="name">
+      {p.name}
+      {p.name_ko && <span class="ko muted">{p.name_ko}</span>}
+    </div>
+    {meta && <div class="meta muted">{meta}</div>}
+    {p.bio && <div class="bio" set:html={blockMd(p.bio)} />}
+    <Links links={p.links} />
+  </div>
+</article>
+
+<style>
+  .person {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .person:last-child {
+    border-bottom: 0;
+  }
+  img,
+  .placeholder {
+    width: 120px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 2rem;
+    font-family: var(--serif);
+  }
+  .name {
+    font-weight: 600;
+    font-size: 1.08rem;
+  }
+  .ko {
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin-left: 0.4rem;
+  }
+  .meta {
+    font-size: 0.9rem;
+  }
+  .bio {
+    font-size: 0.95rem;
+    margin: 0.35rem 0 0.4rem;
+  }
+  .bio :global(p) {
+    margin: 0 0 0.4rem;
+  }
+  @media (max-width: 520px) {
+    .person {
+      grid-template-columns: 84px 1fr;
+      gap: 1rem;
+    }
+    img,
+    .placeholder {
+      width: 84px;
+    }
+  }
+</style>

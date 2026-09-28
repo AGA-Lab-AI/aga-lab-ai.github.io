@@ -1,0 +1,152 @@
+:root {
+  --fg: #1d2330;
+  --muted: #5d6677;
+  --bg: #ffffff;
+  --bg-soft: #f4f6f9;
+  --line: #e2e6ec;
+  --accent: #1b4f8a;
+  --accent-soft: #e8eff8;
+  --radius: 10px;
+  --maxw: 960px;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e3e7ee;
+    --muted: #9aa3b2;
+    --bg: #12151b;
+    --bg-soft: #1a1f27;
+    --line: #2a313c;
+    --accent: #7eb0ea;
+    --accent-soft: #1d2a3b;
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  line-height: 1.25;
+  font-weight: 600;
+}
+h1 {
+  font-size: 2.1rem;
+  margin: 0 0 0.75rem;
+}
+h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+}
+h3 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+main {
+  padding-block: 2rem 4rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.lead {
+  font-size: 1.08rem;
+}
+
+figure {
+  margin: 1.5rem 0;
+}
+figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+/* Markdown pages (research statement, recruiting) */
+.prose img {
+  border-radius: var(--radius);
+  margin: 1.5rem auto;
+}
+/* Images side by side; stacks on narrow screens. Usage in Markdown:
+   <div class="figure-row"><img src="..." alt="..." /><img src="..." alt="..." /></div> */
+.prose .figure-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.prose .figure-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .prose .figure-row {
+    flex-direction: column;
+  }
+}
+.prose ul {
+  padding-left: 1.3rem;
+}
+.prose li {
+  margin: 0.2rem 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+.button:hover {
+  background: var(--accent-soft);
+  text-decoration: none;
+}

@@ -1,0 +1,372 @@
+% CV-specific fields used by the CV generator:
+% cvcategory: journal | conference | workshop | preprint
+% cvstatus: published | preprint
+% cvequalcontributors and cvcorrespondingauthors: names joined with `and`
+% cvhonor, cvimpactfactor, and cvjcrtoppercent: display metadata
+
+@INPROCEEDINGS{8658402,
+  author={Kim, Sookyung and Kim, Hyojin and Lee, Joonseok and Yoon, Sangwoong and Kahou, Samira Ebrahimi and Kashinath, Karthik and Prabhat, Mr},
+  booktitle={2019 IEEE Winter Conference on Applications of Computer Vision (WACV)}, 
+  title={Deep-Hurricane-Tracker: Tracking and Forecasting Extreme Climate Events}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={1761-1769},
+  abstract={Tracking and predicting extreme events in large-scale spatio-temporal climate data are long standing challenges in climate science. In this paper, we propose Convolutional LSTM (ConvLSTM)-based spatio-temporal models to track and predict hurricane trajectories from large-scale climate data; namely, pixel-level spatio-temporal history of tropical cyclones. To address the tracking problem, we model time-sequential density maps of hurricane trajectories, enabling to capture not only the temporal dynamics but also spatial distribution of the trajectories. Furthermore, we introduce a new trajectory prediction approach as a problem of sequential forecasting from past to future hurricane density map sequences. Extensive experiment on actual 20 years record shows that our ConvLSTM-based tracking model significantly outperforms existing approaches, and that the proposed forecasting model achieves successful mapping from predicted density map to ground truth.},
+  keywords={Meteorology;Hurricanes;Predictive models;Trajectory;Forecasting;Event detection;Videos},
+  doi={10.1109/WACV.2019.00192},
+  url={https://ieeexplore.ieee.org/abstract/document/8658402},
+  ISSN={1550-5790},
+  month={1},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+
+
+@ARTICLE{9600832,
+  author={Park, Kyu Min and Park, Younghyo and Yoon, Sangwoong and Park, Frank C.},
+  journal={IEEE/ASME Transactions on Mechatronics}, 
+  title={Collision Detection for Robot Manipulators Using Unsupervised Anomaly Detection Algorithms}, 
+  year={2022},
+  volume={27},
+  number={5},
+  pages={2841-2851},
+  abstract={Collaborative robot manipulators operating in dynamic and unstructured environments shared with humans require fast and accurate detection of collisions. When using model-based detection methods without joint torque sensors, proper treatment for friction in the motors is required, such as accurate modeling of friction parameters. In our previous work, we have presented two supervised learning-based detection methods, which successfully compensate for uncertain dynamic effects, including unmodeled friction. However, robot collision data are required for training and only the scenarios that are learned as collisions can be robustly detected. In this article, we present two collision detection methods using unsupervised anomaly detection algorithms—a one-class support vector machine, and an autoencoder—for robot manipulators. Only the motor current measurements together with a robot dynamics model are required while no additional external sensors, friction modeling, or manual tuning of multiple detection thresholds are needed. Extensive experiments with a robot collision dataset collected with a six-joint robot manipulator validate that our unsupervised detection algorithms can robustly detect a variety of hard and soft collisions with very light computation using only the data for collision-free motions and without the knowledge of every possible type of collision that can occur.},
+  keywords={Collision avoidance;Robot sensing systems;Sensors;Heuristic algorithms;Friction;Torque;Dynamics;Collision detection;physical human–robot interaction (pHRI);robot manipulator;unsupervised learning},
+  doi={10.1109/TMECH.2021.3119057},
+  url={https://ieeexplore.ieee.org/abstract/document/9600832},
+  ISSN={1941-014X},
+  month={10},
+  cvcategory = {journal},
+  cvstatus = {published},
+  cvimpactfactor = {6.1},
+  cvjcrtoppercent = {15.5}
+}
+
+
+@inproceedings{
+lee2022regularized,
+title={Regularized Autoencoders for Isometric Representation Learning},
+author={Yonghyeon Lee and Sangwoong Yoon and MinJun Son and Frank C. Park},
+booktitle={International Conference on Learning Representations},
+year={2022},
+url={https://openreview.net/forum?id=mQxt8l7JL04},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+@article{Yoon_Kang_Jeon_Lee_Han_Park_Kim_2021, title={Image-to-Image Retrieval by Learning Similarity between Scene Graphs}, volume={35}, url={https://ojs.aaai.org/index.php/AAAI/article/view/17281}, DOI={10.1609/aaai.v35i12.17281}, abstractNote={As a scene graph compactly summarizes the high-level content of an image in a structured and symbolic manner, the similarity between scene graphs of two images reflects the relevance of their contents. Based on this idea, we propose a novel approach for image-to-image retrieval using scene graph similarity measured by graph neural networks. In our approach, graph neural networks are trained to predict the proxy image relevance measure, computed from human-annotated captions using a pre-trained sentence similarity model. We collect and publish the dataset for image relevance measured by human annotators to evaluate retrieval algorithms. The collected dataset shows that our method agrees well with the human perception of image similarity than other competitive baselines.}, number={12}, journal={Proceedings of the AAAI Conference on Artificial Intelligence}, booktitle={Proceedings of the AAAI Conference on Artificial Intelligence}, author={Yoon, Sangwoong and Kang, Woo Young and Jeon, Sungwook and Lee, SeongEun and Han, Changjin and Park, Jonghun and Kim, Eun-Sol}, year={2021}, month={5}, pages={10718--10726},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+@InProceedings{pmlr-v139-yoon21c,
+  title = 	 {Autoencoding Under Normalization Constraints},
+  author =       {Yoon, Sangwoong and Noh, Yung-Kyun and Park, Frank},
+  booktitle = 	 {Proceedings of the 38th International Conference on Machine Learning},
+  pages = 	 {12087--12097},
+  year = 	 {2021},
+  editor = 	 {Meila, Marina and Zhang, Tong},
+  volume = 	 {139},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {7},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v139/yoon21c/yoon21c.pdf},
+  url = 	 {https://proceedings.mlr.press/v139/yoon21c.html},
+  abstract = 	 {Likelihood is a standard estimate for outlier detection. The specific role of the normalization constraint is to ensure that the out-of-distribution (OOD) regime has a small likelihood when samples are learned using maximum likelihood. Because autoencoders do not possess such a process of normalization, they often fail to recognize outliers even when they are obviously OOD. We propose the Normalized Autoencoder (NAE), a normalized probabilistic model constructed from an autoencoder. The probability density of NAE is defined using the reconstruction error of an autoencoder, which is differently defined in the conventional energy-based model. In our model, normalization is enforced by suppressing the reconstruction of negative samples, significantly improving the outlier detection performance. Our experimental results confirm the efficacy of NAE, both in detecting outliers and in generating in-distribution samples.},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+@inproceedings{
+tang2026wd,
+title={wd1:  Weighted Policy Optimization for Reasoning in Diffusion Language Models},
+author={Xiaohang Tang and Rares Dolga and Sangwoong Yoon and Ilija Bogunovic},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=L2rfd2Czbj},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvequalcontributors = {Xiaohang Tang and Rares Dolga},
+  cvcorrespondingauthors = {Sangwoong Yoon and Ilija Bogunovic}
+}
+
+@inproceedings{
+tang2026gdsd,
+  title={{GDSD}: Reinforcement Learning as Guided Denoiser Self-Distillation for Diffusion Language Models},
+  author={Xiaohang Tang and Keyue Jiang and Che Liu and Qifang Zhao and Xiaoxiao Xu and Sangwoong Yoon and Ilija Bogunovic},
+  booktitle={The Fortieth Annual Conference on Neural Information Processing Systems},
+  year={2026},
+  url={https://openreview.net/forum?id=WxO85pTOHz},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvcorrespondingauthors = {Sangwoong Yoon and Ilija Bogunovic}
+}
+
+@inproceedings{
+sun2026rethinking,
+  title={Rethinking Knowledge Distillation for Diffusion Language Models},
+  author={Yuxuan Sun and Yuanjian Xu and Jianing Hao and Yu Li and Sowmen Das and Zhong Li and Sangwoong Yoon and Miguel R. D. Rodrigues},
+  booktitle={The Fortieth Annual Conference on Neural Information Processing Systems},
+  year={2026},
+  url={https://openreview.net/forum?id=RwFzh7uPPD},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvcorrespondingauthors = {Sangwoong Yoon and Miguel R. D. Rodrigues}
+}
+
+
+
+
+@article{
+doi:10.1126/sciadv.adn5228,
+author = {Shalil Khanal  and Yuanhang Liu  and Adebowale O. Bamidele  and Alexander Q. Wixom  and Alexander M. Washington  and Nidhi Jalan-Sakrikar  and Shawna A. Cooper  and Ivan Vuckovic  and Song Zhang  and Jun Zhong  and Kenneth L. Johnson  and M. Cristine Charlesworth  and Iljung Kim  and Yubin Yeon  and Sangwoong Yoon  and Yung-Kyun Noh  and Chady Meroueh  and Abdul Aziz Timbilla  and Usman Yaqoob  and Jinhang Gao  and Yohan Kim  and Fabrice Lucien  and Robert C. Huebert  and Nissim Hay  and Michael Simons  and Vijay H. Shah  and Enis Kostallari },
+title = {Glycolysis in hepatic stellate cells coordinates fibrogenic extracellular vesicle release spatially to amplify liver fibrosis},
+journal = {Science Advances},
+volume = {10},
+number = {26},
+pages = {eadn5228},
+year = {2024},
+doi = {10.1126/sciadv.adn5228},
+URL = {https://www.science.org/doi/abs/10.1126/sciadv.adn5228},
+eprint = {https://www.science.org/doi/pdf/10.1126/sciadv.adn5228},
+abstract = {Liver fibrosis is characterized by the activation of perivascular hepatic stellate cells (HSCs), the release of fibrogenic nanosized extracellular vesicles (EVs), and increased HSC glycolysis. Nevertheless, how glycolysis in HSCs coordinates fibrosis amplification through tissue zone-specific pathways remains elusive. Here, we demonstrate that HSC-specific genetic inhibition of glycolysis reduced liver fibrosis. Moreover, spatial transcriptomics revealed a fibrosis-mediated up-regulation of EV-related pathways in the liver pericentral zone, which was abrogated by glycolysis genetic inhibition. Mechanistically, glycolysis in HSCs up-regulated the expression of EV-related genes such as Ras-related protein Rab-31 (RAB31) by enhancing histone 3 lysine 9 acetylation on the promoter region, which increased EV release. Functionally, these glycolysis-dependent EVs increased fibrotic gene expression in recipient HSC. Furthermore, EVs derived from glycolysis-deficient mice abrogated liver fibrosis amplification in contrast to glycolysis-competent mouse EVs. In summary, glycolysis in HSCs amplifies liver fibrosis by promoting fibrogenic EV release in the hepatic pericentral zone, which represents a potential therapeutic target. Glycolysis in liver perivascular cells amplifies fibrosis through a spatially coordinated extracellular vesicle release.},
+  cvcategory = {journal},
+  cvstatus = {published},
+  cvimpactfactor = {13.6},
+  cvjcrtoppercent = {2.342}
+}
+
+@inproceedings{NEURIPS2023_9b6d7202,
+ author = {Yoon, Sangwoong and Jin, Young-Uk and Noh, Yung-Kyun and Park, Frank},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},
+ pages = {49445--49466},
+ publisher = {Curran Associates, Inc.},
+ title = {Energy-Based Models for Anomaly Detection: A Manifold Diffusion Recovery Approach},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2023/file/9b6d7202750e8e32cd5270eb7fc131f7-Paper-Conference.pdf},
+ volume = {36},
+ year = {2023},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+@article{Jin2023,
+  author  = {Jin, Howon and Yoon, Sangwoong and Park, Frank C. and Ahn, Kyung Hyun},
+  title   = {Data-driven constitutive model of complex fluids using recurrent neural networks},
+  journal = {Rheologica Acta},
+  year    = {2023},
+  volume  = {62},
+  number  = {10},
+  pages   = {569--586},
+  doi     = {10.1007/s00397-023-01405-z},
+  url     = {https://doi.org/10.1007/s00397-023-01405-z},
+  issn    = {1435-1528},
+  abstract = {This study introduces the Constitutive Neural Network (ConNN) model, a machine learning algorithm that accurately predicts the temporal response of complex fluids under specific deformations. The ConNN model utilizes a recurrent neural network architecture to capture the time dependent stress responses, and the recurrent units are specifically designed to reflect the characteristics of complex fluids (fading memory, finite elastic deformation, and relaxation spectrum), without presuming any equation of motion of the fluid. We demonstrate that the ConNN model can effectively replicate the temporal data generated by the Giesekus model and the Thixotropic-Elasto-Visco-Plastic (TEVP) fluid model under varying shear rates. To test the performance of the trained model, we subject it to an oscillatory shear flow, with periodic reversals in flow direction, which has not been trained on. The ConNN model successfully replicates the shear moduli of the original models, and the trained values of the recurrent parameters match the physical prediction of the original models. However, we do observe a slight deviation in the normal stresses, indicating that further improvements are necessary to achieve more rigorous physical symmetry and improve the model prediction.},
+  cvcategory = {journal},
+  cvstatus = {published},
+  cvequalcontributors = {Howon Jin and Sangwoong Yoon},
+  cvimpactfactor = {2.3},
+  cvjcrtoppercent = {42.0}
+}
+
+@article{Lee2022,
+  author  = {Lee, Minwoo and Yoon, Sangwoong and Kim, Juhan and Wang, Yuangang and Lee, Keeman and Park, Frank Chongwoo and Sohn, Chae Hoon},
+  title   = {Classification of impinging jet flames using convolutional neural network with transfer learning},
+  journal = {Journal of Mechanical Science and Technology},
+  year    = {2022},
+  volume  = {36},
+  number  = {3},
+  pages   = {1547--1556},
+  doi     = {10.1007/s12206-022-0240-5},
+  url     = {https://doi.org/10.1007/s12206-022-0240-5},
+  issn    = {1976-3824},
+  abstract = {Depending on the equivalence ratio and the Reynolds number, impinging jet flames exhibit several modes of thermoacoustic oscillation. In this study, we present a machine-learning-based method for classifying the regimes of thermoacoustic oscillation. We perform transfer learning to train the convolutional neural network model designed to classify flame images. We show that an accurate classification of impinging jet flames is achieved with an accuracy of 93.6 \% by using just a single snapshot image. This study constitutes the first demonstration of transfer learning in classifying fluid images, opening up new possibilities for robust image-based diagnostics of various fluid and combustion systems.},
+  cvcategory = {journal},
+  cvstatus = {published},
+  cvequalcontributors = {Minwoo Lee and Sangwoong Yoon},
+  cvimpactfactor = {1.5},
+  cvjcrtoppercent = {62.8}
+}
+
+@article{YI2025130428,
+title = {Early detection of pore clogging in microfluidic systems with 3D convolutional neural network},
+journal = {Separation and Purification Technology},
+volume = {359},
+pages = {130428},
+year = {2025},
+issn = {1383-5866},
+doi = {https://doi.org/10.1016/j.seppur.2024.130428},
+url = {https://www.sciencedirect.com/science/article/pii/S1383586624041674},
+author = {Woobin Yi and Dae Yeon Kim and Howon Jin and Sangwoong Yoon and Kyung Hyun Ahn},
+keywords = {Pore clogging, Microfluidics, Particle deposition, Machine learning, Artificial intelligence, Convolutional neural network, Clogging forecasting},
+abstract = {In this study, we investigate whether the clogging phenomenon in a particulate suspension can be predicted from earlier observations of the system. Our research focuses on a microfluidic model system of polystyrene particles dispersed in a glycerol solution, where the onset of clogging can be controlled by adjusting the solution viscosity and flow rate. The microfluidic system allows for optical observations of the flow channels, providing detailed information on how particles are deposited in the flow passage. Using data collected from this model system, we developed a predictive algorithm based on 3D convolutional neural networks (3D CNN) that estimates the probability of clogging onset in the future based on past video frames of the system. Our results show that the 3D CNN can accurately predict clogging even under experimental conditions not encountered during training. The 3D CNN model with a depth of 9 was able to detect clogging after just 25 min, even though the actual clogging occurred after 118 min. This performance is superior compared to the 2D CNN, which detected clogging in 35 min under the same conditions. The high predictive performance indicates that the evolution of particle positions in the early stages of flow contains the necessary information for predicting clogging onset. Our findings have practical implications for the possibility of data-driven predictive maintenance of flow systems.},
+  cvcategory = {journal},
+  cvstatus = {published},
+  cvcorrespondingauthors = {Howon Jin and Sangwoong Yoon},
+  cvimpactfactor = {8.2},
+  cvjcrtoppercent = {8.5}
+}
+
+@inproceedings{
+son2026robust,
+title={Robust Multi-Objective Controlled Decoding of Large Language Models},
+author={Seongho Son and William Bankes and Sangwoong Yoon and Shyam Sundhar Ramesh and Xiaohang Tang and Ilija Bogunovic},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=i0Nno5MgXt},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvequalcontributors = {Seongho Son and William Bankes and Sangwoong Yoon and Shyam Sundhar Ramesh}
+}
+
+@inproceedings{NEURIPS2024_2bed6c14,
+ author = {Yoon, Sangwoong and Hwang, Himchan and Kwon, Dohyun and Noh, Yung-Kyun and Park, Frank},
+ booktitle = {Advances in Neural Information Processing Systems},
+ doi = {10.52202/079017-0776},
+ editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+ pages = {24601--24624},
+ publisher = {Curran Associates, Inc.},
+ title = {Maximum Entropy Inverse Reinforcement Learning of Diffusion Models with Energy-Based Models},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/2bed6c14cd5ea97a9bc1e6094941bde7-Paper-Conference.pdf},
+ volume = {37},
+ year = {2024},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvhonor = {Oral Presentation (Acceptance rate: 0.46\%)}
+}
+
+@inproceedings{NEURIPS2023_0ff54b4e,
+ author = {Yoon, Sangwoong and Park, Frank and YUN, Gunsu and Kim, Iljung and Noh, Yung-Kyun},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},
+ pages = {5010--5027},
+ publisher = {Curran Associates, Inc.},
+ title = {Variational Weighting for Kernel Density Ratios},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2023/file/0ff54b4ec4f70b3ae12c8621ca8a49f4-Paper-Conference.pdf},
+ volume = {36},
+ year = {2023},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+@article{Sehrawat2026,
+  author   = {Sehrawat, Tejasav S. and Cooper, Shawna A. and Navarro-Corcuera, Amaia and Schulze, Ryan J. and Liu, Mengfei and Yaqoob, Usman and Yeon, Yubin and Yoon, Sangwoong and Noh, Yung-Kyun and Meroueh, Chady and Ahn, Joseph C. and Argemi, Josepmaria and Bataller, Ramon A. and McNiven, Mark A. and Dehankar, Mrunal K. and Li, Ying and Lee, Jeong-Heon and Casey, Carol A. and Faubion, William A. and Ordog, Tamas and Kamath, Patrick S. and Simonetto, Douglas A. and Malhi, Harmeet and Cao, Sheng and Shah, Vijay H.},
+  title    = {Single cell multiomic landscape reveals gene programs driving lipid droplet heterogeneity in hepatic steatosis},
+  journal  = {Scientific Reports},
+  year     = {2026},
+  volume   = {16},
+  number   = {1},
+  pages    = {10219},
+  doi      = {10.1038/s41598-026-39913-6},
+  url      = {https://doi.org/10.1038/s41598-026-39913-6},
+  issn     = {2045-2322},
+  abstract = {Alcohol-associated liver disease (ALD) in its earliest form is evidenced as hepatic steatosis which may progress to liver cirrhosis. The mechanisms behind this are poorly understood and therapeutics limited. Liver is a specialized organ exhibiting heterogeneity along the porto-central axis. Periportal preponderance of lipid droplet accumulation was noted in human ALD livers compared to other causes of hepatic steatosis. Using single cell multiomics, we studied transcriptional mechanisms across the hepatic lobule that could account for zonation of lipid droplets in a murine ALD model. Alcohol led to periportal zonation of lipogenesis-associated genes in mice, including Hsd17b13 and Fasn. Chromatin landscape studies demonstrated zonation of master transcription factors that led to these changes in the transcriptome. We utilized these data to provide novel insight into zone-specific HNF4α and PPARα regulation of HSD17B13. We conclude novel mechanisms underlying ALD leading to spatially distinct establishment of hepatic steatosis and provide insight into disease pathogenesis.},
+  cvcategory = {journal},
+  cvstatus = {published}
+}
+
+@article{Park2026,
+  author  = {Park, Nayeon and Yoon, Sangwoong and Jin, Howon and Park, Jun Dong and Myung, Jin Suk},
+  title   = {A probabilistic data-driven constitutive modeling framework for complex fluids},
+  journal = {Rheologica Acta},
+  year    = {2026},
+  month   = {9},
+  volume  = {65},
+  number  = {9},
+  pages   = {785--804},
+  doi     = {10.1007/s00397-026-01585-4},
+  url     = {https://doi.org/10.1007/s00397-026-01585-4},
+  issn    = {1435-1528},
+  abstract = {Conventional constitutive modeling of complex fluids typically relies on deterministic parameter fitting or discrete mode selection, which limits flexibility in representing diverse rheological responses. We propose the Rheological Probabilistic (RheoPro) framework, a data-driven constitutive modeling approach that extends physics-based kinetic models into stochastic ensembles and infers parameter-generating distributions from differentiable, closed-form evaluations of small-amplitude oscillatory shear moduli and steady-shear viscosity. As a representative implementation, we formulate a Generalized Dumbbell Soft Glassy Rheology (GDSGR) model that couples activated yielding dynamics with bead-spring kinematics. A reparameterization trick enables stable gradient-based optimization without repeated time stepping during training. When trained on single- and multi-mode Giesekus and thixotropic elasto-viscoplastic benchmarks, the optimized GDSGR model reproduces linear moduli and nonlinear flow curves with log-space coefficients of determination near unity. For the multi-mode benchmark, the inferred distribution represents the relaxation spectrum as a continuous lifetime distribution without a prescribed mode count. In the thixotropic benchmark, it captures the yield-dominated low-shear response and viscoelastic--plastic coupling, while showing that moduli and steady-shear viscosity alone may not uniquely constrain transient kinetics. This constitutive modeling framework remains robust under moderate synthetic measurement noise and provides an interpretable, extensible foundation for distribution inference across linear viscoelastic and nonlinear steady-shear regimes.},
+  cvcategory = {journal},
+  cvstatus = {published}
+}
+
+@inproceedings{
+hwang2026value,
+title={Value Gradient Sampler: Learning Invariant Value Functions for Equivariant Diffusion Sampling},
+author={Himchan Hwang and Hyeokju Jeong and Dong Kyu Shin and Che-Sang Park and Sehee Kweon and Sangwoong Yoon and Frank C. Park},
+booktitle={The 29th International Conference on Artificial Intelligence and Statistics},
+year={2026},
+issn={2640-3498},
+url={https://openreview.net/forum?id=YmV7Sc80YK},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvequalcontributors = {Himchan Hwang and Hyeokju Jeong and Dong Kyu Shin},
+  cvcorrespondingauthors = {Sangwoong Yoon and Frank C. Park}
+}
+
+@inproceedings{tang2026rspo,
+  author = {Tang, Xiaohang and Yoon, Sangwoong and Son, Seongho and Yuan, Huizhuo and Gu, Quanquan and Bogunovic, Ilija},
+  title = {{RSPO}: Regularized Self-Play Alignment of Large Language Models},
+  booktitle = {Forty-third International Conference on Machine Learning},
+  year = {2026},
+  eprint = {2503.00030},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2503.00030},
+  cvcategory = {conference},
+  cvstatus = {published},
+  cvequalcontributors = {Xiaohang Tang and Sangwoong Yoon}
+}
+
+@inproceedings{
+ramesh2026multitask,
+title={Multi-Task {GRPO}: Reliable {LLM} Reasoning Across Tasks},
+author={Shyam Sundhar Ramesh and Xiaotong Ji and Matthieu Zimmer and Sangwoong Yoon and Zhiyong Wang and Haitham Bou Ammar and Aurelien Lucchi and Ilija Bogunovic},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
+url={https://openreview.net/forum?id=zA3KhRZ9A5},
+  cvcategory = {conference},
+  cvstatus = {published}
+}
+
+@misc{wolf2025doge,
+  author = {Wolf, Lorenz and Yoon, Sangwoong and Bogunovic, Ilija},
+  title = {This Is Your Doge, If It Please You: Exploring Deception and Robustness in Mixture of {LLM}s},
+  year = {2025},
+  eprint = {2503.05856},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2503.05856},
+  cvcategory = {preprint},
+  cvstatus = {preprint}
+}
+
+@inproceedings{yoon2024grouprobust,
+  author = {Yoon, Sangwoong and Bankes, William and Son, Seongho and Petrovic, Anja and Ramesh, Shyam Sundhar and Tang, Xiaohang and Bogunovic, Ilija},
+  title = {Group Robust Best-of-{K} Decoding of Language Models for Pluralistic Alignment},
+  booktitle = {Neural Information Processing Systems 2024 Pluralistic Alignment Workshop},
+  year = {2024},
+  cvcategory = {workshop},
+  cvstatus = {published},
+  cvequalcontributors = {Sangwoong Yoon and William Bankes and Seongho Son and Anja Petrovic}
+}
+
+@inproceedings{yoon2019kldivergence,
+  author = {Yoon, Sangwoong and Park, Frank C. and Noh, Yung-Kyun},
+  title = {Kullback--Leibler Divergence Estimation using Variationally Weighted Kernel Density Estimators},
+  booktitle = {Neural Information Processing Systems 2019 Information Theory and Machine Learning Workshop},
+  year = {2019},
+  cvcategory = {workshop},
+  cvstatus = {published}
+}
+
+@inproceedings{yoon2018interpretable,
+  author = {Yoon, Sangwoong and Song, Yonho and Kim, Minsoo and Park, Frank C. and Noh, Yung-Kyun},
+  title = {Interpretable Feature Selection Using Local Information for Credit Assessment},
+  booktitle = {Neural Information Processing Systems 2018 Workshop on Challenges and Opportunities for {AI} in Financial Services},
+  year = {2018},
+  cvcategory = {workshop},
+  cvstatus = {published},
+  cvhonor = {Oral Presentation}
+}
+
+@inproceedings{yoon2014predictive,
+  author = {Yoon, Sangwoong and Lee, Sang-Woo and Zhang, Byoung-Tak},
+  title = {Predictive Property of Hidden Representations in Recurrent Neural Network Language Models},
+  booktitle = {Neural Information Processing Systems 2014 Workshop on Modern Machine Learning Methods and Natural Language Processing},
+  year = {2014},
+  cvcategory = {workshop},
+  cvstatus = {published}
+}

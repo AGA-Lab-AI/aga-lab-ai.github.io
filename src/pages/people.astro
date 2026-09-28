@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import PIProfile from '../components/PIProfile.astro';
+import PersonCard from '../components/PersonCard.astro';
+import { ROLE_GROUPS, getPeople } from '../lib/data';
+
+const people = await getPeople();
+const current = people.filter((p) => !p.alumni);
+const alumni = people.filter((p) => p.alumni);
+---
+
+<Base title="People">
+  <h1>People</h1>
+  {
+    ROLE_GROUPS.map(({ role, label }) => {
+      const members = current.filter((p) => p.role === role);
+      if (members.length === 0) return null;
+      return (
+        <section>
+          <h2>{label}</h2>
+          {role === 'pi' ? (
+            members.map((p) => <PIProfile pi={p} />)
+          ) : (
+            <div class="people">
+              {members.map((p) => (
+                <PersonCard person={p} />
+              ))}
+            </div>
+          )}
+        </section>
+      );
+    })
+  }
+
+  {
+    alumni.length > 0 && (
+      <section>
+        <h2>Alumni</h2>
+        <ul>
+          {alumni.map((p) => (
+            <li>
+              {p.links.homepage ? <a href={p.links.homepage}>{p.name}</a> : p.name}
+              {p.program && <span class="muted"> ({p.program})</span>}
+              {p.now && <span class="muted"> → {p.now}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .people {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

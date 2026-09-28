@@ -1,0 +1,116 @@
+# Lab members. Order within each group follows this file.
+#
+#   - name: Gildong Hong             # required (also used to bold lab members in publications)
+#     name_ko: 홍길동                  # optional
+#     role: grad                     # pi | postdoc | grad | intern | undergrad | staff
+#     program: M.S. Student          # optional status line, e.g. "Integrated M.S.-Ph.D. Student", "Undergraduate Student in Computer Science"
+#     photo: gildong-hong.jpg        # optional, file in public/images/people/
+#     since: 2026                    # optional
+#     bio: Short description (Markdown allowed), e.g. research interests  # optional
+#     links:                         # all optional
+#       homepage: https://...
+#       scholar: https://scholar.google.com/...
+#       github: https://github.com/...
+#       x: https://x.com/...
+#       linkedin: https://www.linkedin.com/in/...
+#       email: someone@unist.ac.kr
+#     alumni: true                   # optional; moves the person to the Alumni section
+#     now: "Ph.D. student at ..."    # optional, shown for alumni
+#
+# Photos: square images (~480x480 JPG) work best.
+
+- name: Sangwoong Yoon
+  name_ko: 윤상웅
+  role: pi
+  title:                     # one line, or a list for multiple positions
+    - Assistant Professor, Graduate School of AI, UNIST
+    - Affiliated Professor, Department of Electrical Engineering, UNIST
+  portrait: /images/site/pi-portrait.jpg     # optional larger (3:4) photo for the PI profile
+  bio: >-
+    I am an Assistant Professor at [UNIST Graduate School of AI](https://aigs.unist.ac.kr/eng/index.php),
+    jointly affiliated with the [Department of Electrical Engineering](https://ee.unist.ac.kr/eng/).
+    I was previously a Research Fellow at
+    [University College London (UCL)](https://www.ucl.ac.uk/engineering/electronic-electrical-engineering)
+    and [Korea Institute for Advanced Study (KIAS)](https://kias.re.kr/).
+    I also worked as an applied scientist intern at Amazon (Seattle, US) and as a research scientist
+    intern at Kakao Brain.
+  education:
+    - "Ph.D. in Mechanical Engineering, Seoul National University (Advisor: Frank Chongwoo Park)"
+    - "M.S. in Neuroscience, Seoul National University (Advisor: Byoung-Tak Zhang)"
+    - B.S. in Chemical and Biological Engineering, Seoul National University
+  links:
+    x: https://x.com/woongssang
+    linkedin: https://www.linkedin.com/in/sangwoong-yoon-8a6944b9/
+    scholar: https://scholar.google.co.kr/citations?user=cH2rjfIAAAAJ
+
+# ---- Postdoctoral Researchers ----
+- name: Sanghoon Lee
+  name_ko: 이상훈
+  role: postdoc
+  program: Postdoctoral Researcher
+  photo: sanghoon-lee.jpg
+
+# ---- Graduate Students ----
+- name: Davin Kim
+  name_ko: 김다빈
+  role: grad
+  program: Integrated M.S.-Ph.D. Student, Graduate School of AI, UNIST
+  photo: davin-kim.jpg
+  links:
+    homepage: https://davinkim03.github.io/
+
+- name: Seonggeun Ahn
+  name_ko: 안성근
+  role: grad
+  program: M.S. Student, Graduate School of AI, UNIST
+  photo: seonggeun-ahn.jpg
+  links:
+    homepage: https://seonggeun-ahn.github.io/
+
+- name: Huiwon Jeong
+  name_ko: 정희원
+  role: grad
+  program: M.S. Student, Graduate School of AI, UNIST
+  photo: huiwon-jeong.jpg
+  links:
+    homepage: https://huiwonjeong0116.github.io/
+
+- name: Jaeyeon Heo
+  name_ko: 허재연
+  role: grad
+  program: M.S. Student, Graduate School of AI, UNIST
+  photo: jaeyeon-heo.jpg
+  links:
+    homepage: https://jaeyeone.github.io/
+
+# ---- Research Interns ----
+- name: Byeonggwan Lee
+  name_ko: 이병관
+  role: intern
+  program: Research Intern
+  photo: byeonggwan-lee.jpg
+
+- name: Minsoo Kim
+  name_ko: 김민수
+  role: intern
+  program: Research Intern
+  photo: minsoo-kim.jpg
+  links:
+    linkedin: https://www.linkedin.com/in/minsoo-kim-55819043b
+
+# ---- Undergraduate Interns ----
+- name: Jian Jeong
+  name_ko: 정지안
+  role: undergrad
+  program: Undergraduate Student in Electrical Engineering, UNIST
+  photo: jian-jeong.jpg
+
+- name: Younghyun Kim
+  name_ko: 김영현
+  role: undergrad
+  program: Undergraduate Student in Mechanical Engineering, UNIST
+
+- name: Seyoon Hong
+  name_ko: 홍세윤
+  role: undergrad
+  program: Undergraduate Student in Computer Science, UNIST

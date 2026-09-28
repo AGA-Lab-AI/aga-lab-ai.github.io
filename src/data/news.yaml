@@ -1,0 +1,54 @@
+# Lab news — newest first. Add new items at the TOP of this list.
+#
+#   - date: 2026-07        # YYYY-MM or YYYY-MM-DD
+#     text: "Markdown is allowed: **bold**, [link](https://...)"
+#
+# The home page shows the most recent items; /news shows everything.
+
+- date: 2026-11
+  text: "AGA Lab participates in [KIAS Center for AI and Natural Sciences Workshop](https://symposia.kias.re.kr/cains-nov2026). Sangwoong gives an invited talk."
+
+- date: 2026-09
+  text: "[GDSD: Reinforcement Learning as Guided Denoiser Self-Distillation for Diffusion Language Models](https://openreview.net/forum?id=WxO85pTOHz) is accepted at NeurIPS 2026"
+
+- date: 2026-09
+  text: "[Rethinking Knowledge Distillation for Diffusion Language Models](https://openreview.net/forum?id=RwFzh7uPPD) is accepted at NeurIPS 2026"
+
+- date: 2026-07
+  text: Sangwoong attends ICML 2026 in Seoul, Republic of Korea
+
+- date: 2026-05
+  text: Sangwoong gives a talk at 2026 KSIAM Spring Conference at UNIST
+
+- date: 2026-05
+  text: "[Multi-Task GRPO: Reliable LLM Reasoning Across Tasks](https://arxiv.org/abs/2602.05547) is accepted at ICML 2026"
+
+- date: 2026-05
+  text: "[RSPO: Regularized Self-Play Alignment of Large Language Models](https://arxiv.org/abs/2503.00030) is accepted at ICML 2026"
+
+- date: 2026-04
+  text: Awarded funding for supporting post-doctoral researchers. AGA Lab participates in the InnoCORE program as a member of the BIO-MAX research group
+
+- date: 2026-04
+  text: Sangwoong attends ICLR 2026 in Rio de Janeiro
+
+- date: 2026-04
+  text: Sangwoong gives a talk at Korea Institute for Advanced Study (KIAS)
+
+- date: 2026-03
+  text: Awarded a 50,000 GPU-hour compute grant from the Swiss AI Initiative as part of a collaboration with University College London and the University of Basel
+
+- date: 2026-03
+  text: "Sangwoong gives a talk, *Generative Modeling and Reinforcement Learning: Energy, Reward, and Value*, at UNIST AIGS Seminar"
+
+- date: 2026-02
+  text: Sangwoong gives a tutorial session at 2026 AI Winter School (2026 인공지능 동계단기강좌) hosted by Korea Artificial Intelligence Association
+
+- date: 2026-01
+  text: "[wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](https://arxiv.org/abs/2507.08838) is accepted at ICLR 2026"
+
+- date: 2026-01
+  text: "[Robust Multi-Objective Controlled Decoding of Large Language Models](https://arxiv.org/abs/2503.08796) is accepted at ICLR 2026"
+
+- date: 2026-01
+  text: "[Value Gradient Sampler: Learning Invariant Value Functions for Equivariant Diffusion Sampling](https://arxiv.org/abs/2502.13280) is accepted at AISTATS 2026"

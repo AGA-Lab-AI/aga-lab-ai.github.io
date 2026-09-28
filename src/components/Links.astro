@@ -1,0 +1,38 @@
+---
+import type { Person } from '../lib/data';
+
+interface Props {
+  links: Person['links'];
+}
+const { links } = Astro.props;
+const LABELS: Record<string, string> = {
+  homepage: 'Homepage',
+  scholar: 'Google Scholar',
+  github: 'GitHub',
+  x: 'X',
+  linkedin: 'LinkedIn',
+  email: 'Email',
+};
+const items = Object.entries(links).filter(([, v]) => v) as [string, string][];
+---
+
+{
+  items.length > 0 && (
+    <span class="links">
+      {items.map(([k, v]) => (
+        <a href={k === 'email' ? `mailto:${v}` : v} target={k === 'email' ? undefined : '_blank'} rel="noopener">
+          {LABELS[k] ?? k}
+        </a>
+      ))}
+    </span>
+  )
+}
+
+<style>
+  .links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    font-size: 0.9rem;
+  }
+</style>

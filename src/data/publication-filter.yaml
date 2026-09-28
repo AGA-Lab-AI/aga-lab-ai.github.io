@@ -1,0 +1,21 @@
+# Which entries of publications.bib are shown on the website.
+#
+# publications.bib is the complete publication list (it is also used by the CV
+# generator), so it is kept as-is; this file only decides what the website shows.
+# Rules are applied in order: categories/min_year first, then `include`, then `exclude`.
+
+# cvcategory values to show: conference | journal | preprint | workshop
+# (entries without cvcategory are classified automatically: @misc/arXiv -> preprint,
+#  @article -> journal, booktitle containing "Workshop" -> workshop, otherwise conference)
+categories: [conference, preprint]
+
+# Hide anything older than this year (remove the line to disable).
+min_year: 2026
+
+# BibTeX keys to always show, even if the rules above would hide them.
+include:
+  - Sehrawat2026          # Scientific Reports 2026 (journal)
+  - Park2026              # Rheologica Acta 2026 (journal)
+
+# BibTeX keys to always hide.
+exclude: []

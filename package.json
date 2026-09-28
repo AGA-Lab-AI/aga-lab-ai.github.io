@@ -1,0 +1,27 @@
+{
+  "name": "aga-lab-website",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "sync:pubs": "node scripts/sync-publications.mjs",
+    "dev": "astro dev",
+    "dev:host": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@retorquere/bibtex-parser": "^11.0.0",
+    "astro": "^7.3.5",
+    "marked": "^18.0.14",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^22.20.4",
+    "typescript": "^6.0.3"
+  }
+}

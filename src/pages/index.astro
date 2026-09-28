@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsList from '../components/NewsList.astro';
+import PIProfile from '../components/PIProfile.astro';
+import { getNews, getPI } from '../lib/data';
+
+const NEWS_ON_HOME = 10;
+const news = await getNews();
+const pi = await getPI();
+---
+
+<Base>
+  <section class="hero">
+    <div>
+      <h1>Active Generative Agents Lab</h1>
+      <p class="lead">
+        Intelligent biological agents generate actions to explore the world <em>actively</em>. Artificially
+        intelligent agents today attempt to mimic them, but they fall significantly behind in terms of efficiency,
+        effectiveness, and reliability. The Active Generative Agents (AGA) Lab at the{' '}
+        <a href="https://aigs.unist.ac.kr/eng/index.php">UNIST Graduate School of AI</a> aims to investigate the
+        principles underlying intelligence and apply them to build intelligent systems that can interact with the
+        world actively, efficiently, and safely.
+      </p>
+      <p>
+        AGA Lab is primarily interested in developing principled methods at the intersection of{' '}
+        <strong>generative modeling</strong> and <strong>reinforcement learning</strong>. We apply our algorithms to
+        various high-impact real-world applications, including, but not limited to, robotics foundation models,
+        biochemistry, particle physics, chemical engineering, and adtech.
+      </p>
+      <p><a class="button" href="/research-statement/">Research Statement</a> <a class="button" href="/recruiting/">Join us</a></p>
+    </div>
+    <figure>
+      <img src="/images/site/descartes-1644.jpg" alt="Illustration from Descartes, Principles of Philosophy (1644)" />
+      <figcaption>Descartes, <em>Principles of Philosophy</em>, 1644</figcaption>
+    </figure>
+  </section>
+
+  <h2>Principal Investigator</h2>
+  <PIProfile pi={pi} />
+
+  <h2>News</h2>
+  <NewsList items={news.slice(0, NEWS_ON_HOME)} />
+  {news.length > NEWS_ON_HOME && <p><a href="/news/">All news →</a></p>}
+</Base>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 2rem;
+    align-items: start;
+  }
+  .hero figure {
+    margin: 0.5rem 0 0;
+  }
+  .hero img {
+    border-radius: var(--radius);
+  }
+  @media (max-width: 760px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .hero figure {
+      max-width: 260px;
+      margin-inline: auto;
+    }
+  }
+</style>
