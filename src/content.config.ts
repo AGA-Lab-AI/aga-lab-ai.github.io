@@ -126,6 +126,7 @@ const publications = defineCollection({
     equal: z.array(z.string()),
     corresponding: z.array(z.string()),
     year: z.number().int(),
+    month: z.number().int().min(0).max(12),
     venue: z.string(),
     note: z.string().optional(),
     links: z.record(z.string(), z.string()),

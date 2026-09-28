@@ -14,18 +14,33 @@ const LINK_FIELDS = ['pdf', 'code', 'project', 'slides', 'poster', 'video'] as c
 export const CATEGORIES = ['conference', 'journal', 'preprint', 'workshop'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
-/** Short names for well-known venues, matched against booktitle/journal. */
-const VENUE_ABBREVIATIONS: [RegExp, string][] = [
-  [/Learning Representations/i, 'ICLR'],
-  [/International Conference on Machine Learning/i, 'ICML'],
-  [/Neural Information Processing Systems/i, 'NeurIPS'],
-  [/Artificial Intelligence and Statistics/i, 'AISTATS'],
-  [/AAAI Conference/i, 'AAAI'],
-  [/Winter Conference on Applications of Computer Vision/i, 'WACV'],
-  [/Computer Vision and Pattern Recognition/i, 'CVPR'],
-  [/International Conference on Computer Vision/i, 'ICCV'],
-  [/Conference on Robot Learning/i, 'CoRL'],
+/**
+ * Well-known venues, matched against booktitle/journal:
+ * [pattern, short name, usual month of the meeting (used for sorting when `month` is missing)].
+ */
+const VENUE_ABBREVIATIONS: [RegExp, string, number][] = [
+  [/Learning Representations/i, 'ICLR', 4],
+  [/International Conference on Machine Learning/i, 'ICML', 7],
+  [/Neural Information Processing Systems/i, 'NeurIPS', 12],
+  [/Artificial Intelligence and Statistics/i, 'AISTATS', 5],
+  [/AAAI Conference/i, 'AAAI', 2],
+  [/Winter Conference on Applications of Computer Vision/i, 'WACV', 1],
+  [/Computer Vision and Pattern Recognition/i, 'CVPR', 6],
+  [/International Conference on Computer Vision/i, 'ICCV', 10],
+  [/Conference on Robot Learning/i, 'CoRL', 11],
 ];
+
+const MONTH_NAMES = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+/** Month (1-12) from the `month` field, else the usual month of a known venue, else 0 (unknown). */
+function pickMonth(f: Record<string, any>, category: Category): number {
+  const m = String(f.month ?? '').trim().toLowerCase();
+  const n = /^\d+$/.test(m) ? Number(m) : MONTH_NAMES.indexOf(m.slice(0, 3)) + 1;
+  if (n >= 1 && n <= 12) return n;
+  const base: string = f.booktitle ?? f.journal ?? '';
+  if (category !== 'workshop') for (const [re, , month] of VENUE_ABBREVIATIONS) if (re.test(base)) return month;
+  return 0;
+}
 
 export interface Publication {
   id: string;
@@ -38,6 +53,8 @@ export interface Publication {
   /** Authors marked as (co-)corresponding authors (subset of `authors`). */
   corresponding: string[];
   year: number;
+  /** 1-12, or 0 if unknown; used to sort newest first within a year. */
+  month: number;
   venue: string;
   note?: string;
   links: Record<string, string>;
@@ -145,6 +162,7 @@ export function parseBibtex(source: string): Publication[] {
       equal: authors.filter((a) => equalNames.includes(normName(a))),
       corresponding: authors.filter((a) => correspondingNames.includes(normName(a))),
       year,
+      month: pickMonth(f, category),
       venue: pickVenue(f, category, year),
       note: f.note ?? f.cvhonor,
       links,

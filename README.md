@@ -152,7 +152,7 @@ Required fields: `title`, `author`, `year`. Everything else is optional.
 | `pdf`, `code`, `project`, `slides`, `poster`, `video` | Link buttons |
 
 - The `cv*` fields, website-only fields, `abstract`, and `keywords` are removed from the **BibTeX** box visitors copy.
-- Papers are grouped by `year`, and within each year into Preprints / Journal Articles / Conference Papers / Workshop Papers (empty groups are hidden); file order within each group.
+- Papers are grouped by `year`, and within each year into Preprints / Journal Articles / Conference Papers / Workshop Papers (empty groups are hidden). Within each group, newest first: by the `month` field, or for well-known conferences their usual month (ICLR Apr, AISTATS May, ICML Jul, NeurIPS Dec, …; see `VENUE_ABBREVIATIONS` in `src/lib/bibtex.ts`); entries with unknown month come last, in file order.
 - Author names matching someone in `people.yaml` (including alumni) are shown in **bold** automatically
   (`Sangwoong Yoon` and `Yoon, Sangwoong` both match).
 - New venue abbreviations can be added to `VENUE_ABBREVIATIONS` in `src/lib/bibtex.ts`.

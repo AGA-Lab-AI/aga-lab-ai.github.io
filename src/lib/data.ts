@@ -33,12 +33,17 @@ const CATEGORY_RANK = { preprint: 0, journal: 1, conference: 2, workshop: 3 } as
 
 /**
  * Publications shown on the website (see src/data/publication-filter.yaml), grouped by year (desc).
- * Within a year: preprint, journal, conference, workshop; then file order.
+ * Within a year: preprint, journal, conference, workshop; within each, newest first by month
+ * (`month` field or the venue's usual month; unknown months last), then file order.
  */
 export async function getPublicationsByYear() {
   const pubs = (await getCollection('publications', (e) => e.data.visible)).map((e) => ({ id: e.id, ...e.data }));
   pubs.sort(
-    (a, b) => b.year - a.year || CATEGORY_RANK[a.category] - CATEGORY_RANK[b.category] || a.order - b.order,
+    (a, b) =>
+      b.year - a.year ||
+      CATEGORY_RANK[a.category] - CATEGORY_RANK[b.category] ||
+      b.month - a.month ||
+      a.order - b.order,
   );
   const groups = new Map<number, typeof pubs>();
   for (const p of pubs) groups.set(p.year, [...(groups.get(p.year) ?? []), p]);
