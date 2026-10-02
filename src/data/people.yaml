@@ -26,7 +26,7 @@
     - Assistant Professor, Graduate School of AI, UNIST
     - Affiliated Professor, Department of Electrical Engineering, UNIST
   portrait: /images/site/pi-portrait.jpg     # optional larger (3:4) photo for the PI profile
-  bio: >-
+  bio: |-
     I am an Assistant Professor at [UNIST Graduate School of AI](https://aigs.unist.ac.kr/eng/index.php),
     jointly affiliated with the [Department of Electrical Engineering](https://ee.unist.ac.kr/eng/).
     I was previously a Research Fellow at
@@ -34,6 +34,10 @@
     and [Korea Institute for Advanced Study (KIAS)](https://kias.re.kr/).
     I also worked as an applied scientist intern at Amazon (Seattle, US) and as a research scientist
     intern at Kakao Brain.
+
+    He has received the Outstanding Doctoral Dissertation Award from Seoul National University, the Qualcomm Innovation Fellowship Korea, the Youlchon AI Stars Scholarship from the SNU AI Institute, and the Best Poster Award at MLSS 2021 Taipei.
+
+    He currently serves as an Area Chair for NeurIPS and ICLR, and has served as a reviewer for NeurIPS, ICLR, ICML, CVPR, AISTATS, and AAAI.
   education:
     - "Ph.D. in Mechanical Engineering, Seoul National University (Advisor: Frank Chongwoo Park)"
     - "M.S. in Neuroscience, Seoul National University (Advisor: Byoung-Tak Zhang)"
