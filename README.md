@@ -10,6 +10,7 @@ Content lives in three plain-text files, so adding news, papers, or members neve
 | News | `src/data/news.yaml` |
 | Publications | `swyoon-admin/publications/pub.bib` (master, synced into `src/data/publications.bib`) + `src/data/publication-filter.yaml` (what the site shows) |
 | People | `src/data/people.yaml` (+ photos in `public/images/people/`) |
+| Lab photos | `src/data/photos.yaml` (+ images in `src/assets/photos/`) |
 | Research statement | `src/pages/research-statement.md` |
 | Recruiting | `src/pages/recruiting.md` |
 
@@ -195,7 +196,23 @@ A misspelled key in `include`/`exclude` makes the build fail.
 - When someone leaves the lab, **don't delete the entry**. Add `alumni: true` (and optionally
   `now: "Ph.D. student at ..."`). They move to the Alumni section and stay bold in publications.
 
-### 3.4 Research statement / Recruiting
+### 3.4 Photos → `src/data/photos.yaml`
+
+1. Put the image in `src/assets/photos/` (JPG/PNG/WebP, any size), e.g. `2026-workshop.jpg`.
+2. Add an entry to `photos.yaml`:
+
+```yaml
+- year: 2026
+  file: 2026-workshop.jpg
+  caption: "KIAS workshop, Seoul"   # one line; Markdown allowed
+```
+
+- The Photos page groups photos by `year` (newest first); within a year, photos follow the file order.
+- Thumbnails (WebP) are generated at build time, and clicking a photo opens a copy at most 2000 px wide,
+  so large originals don't slow the page down.
+- A misspelled `file` makes the build fail with the missing path.
+
+### 3.5 Research statement / Recruiting
 
 Edit `src/pages/research-statement.md` or `src/pages/recruiting.md` as normal Markdown.
 Images go in `public/images/site/` and are referenced as `![alt text](/images/site/file.jpg)`.

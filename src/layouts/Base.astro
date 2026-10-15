@@ -16,6 +16,7 @@ const nav = [
   { href: '/publications/', label: 'Publications' },
   { href: '/news/', label: 'News' },
   { href: '/research-statement/', label: 'Research' },
+  { href: '/photos/', label: 'Photos' },
   { href: '/recruiting/', label: 'Recruiting' },
 ];
 const path = Astro.url.pathname.replace(/\/?$/, '/');
@@ -136,7 +137,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .nav-button {
     display: none;
   }
-  @media (max-width: 760px) {
+  @media (max-width: 860px) {
     .bar {
       flex-wrap: wrap;
     }

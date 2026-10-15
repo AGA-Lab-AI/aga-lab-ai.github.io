@@ -1,0 +1,20 @@
+# Lab photos. Put image files in src/assets/photos/ and list them here.
+# The Photos page groups them by year (newest year first); within a year, photos follow this file.
+#
+#   - year: 2026
+#     file: 2026-workshop.jpg        # file in src/assets/photos/
+#     caption: "KIAS workshop, Seoul"  # one line; Markdown allowed
+#
+# Photos of any size are fine: thumbnails are generated automatically at build time.
+
+- year: 2026
+  file: 2026-10-taehwa-river-1.jpg
+  caption: "October 2026, Lab outing at Taehwa River"
+
+- year: 2026
+  file: 2026-10-taehwa-river-2.jpg
+  caption: "October 2026, Lab outing at Taehwa River"
+
+- year: 2026
+  file: 2026-07-post-icml-unist.jpg
+  caption: "July 2026, Post-ICML@UNIST Workshop with Prof. Daniel Lee"

@@ -65,6 +65,19 @@ const people = defineCollection({
   }),
 });
 
+// ---------------------------------------------------------------- photos
+const photos = defineCollection({
+  loader: file('src/data/photos.yaml', {
+    parser: (text) => (parseYaml(text) ?? []).map((item: any, i: number) => ({ id: `photo-${String(i).padStart(4, '0')}`, order: i, ...item })),
+  }),
+  schema: z.object({
+    year: z.number().int(),
+    file: z.string(),
+    caption: z.string().default(''),
+    order: z.number(),
+  }),
+});
+
 // ---------------------------------------------------------------- publications (BibTeX)
 const filterSchema = z
   .object({
@@ -136,4 +149,4 @@ const publications = defineCollection({
   }),
 });
 
-export const collections = { news, people, publications };
+export const collections = { news, people, photos, publications };

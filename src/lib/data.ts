@@ -29,6 +29,14 @@ export async function getNews() {
     .sort((a, b) => (a.date === b.date ? a.i - b.i : a.date < b.date ? 1 : -1));
 }
 
+/** Photos grouped by year (newest year first; within a year, file order). */
+export async function getPhotosByYear() {
+  const photos = (await getCollection('photos')).map((e) => e.data).sort((a, b) => b.year - a.year || a.order - b.order);
+  const groups = new Map<number, typeof photos>();
+  for (const p of photos) groups.set(p.year, [...(groups.get(p.year) ?? []), p]);
+  return [...groups.entries()];
+}
+
 const CATEGORY_RANK = { preprint: 0, journal: 1, conference: 2, workshop: 3 } as const;
 
 /**
