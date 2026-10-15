@@ -43,6 +43,12 @@ const pi = await getPI();
   <PIProfile pi={pi} />
 
   <h2>News</h2>
+  <div class="callout callout-warm">
+    <p>
+      <strong>Open position:</strong> We are hiring an InnoCORE postdoctoral researcher for 2027!{' '}
+      <a href="/recruiting/#open-position-innocore-postdoctoral-researcher-2027">Details →</a>
+    </p>
+  </div>
   <NewsList items={news.slice(0, NEWS_ON_HOME)} />
   {news.length > NEWS_ON_HOME && <p><a href="/news/">All news →</a></p>}
 </Base>

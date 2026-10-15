@@ -4,6 +4,44 @@ title: Recruiting
 heading: We are hiring!
 ---
 
+<div class="callout">
+
+## Why AGA Lab?
+
+- **Ambitious, principled research.** We pursue high-impact AI research grounded in deep theoretical understanding, with the goal of publishing at leading machine learning and robotics venues.
+
+- **International collaboration.** We actively collaborate with researchers around the world. Students are encouraged to pursue research internships abroad, and we frequently host international researchers.
+
+- **Compute.** Our research infrastructure includes 4 NVIDIA RTX PRO 6000 Blackwell GPUs, access to departmental clusters (A100, H200, and RTX PRO 6000 Blackwell), and the A100 GPU cluster at the UNIST Supercomputing Center. When additional capacity is needed, we use cloud services, such as VESSL AI.
+
+- **Robots.** We provide hands-on access to 2 ROBOTIS AI3M platforms and 4 SO-101 robot arms for robotics and embodied-agent research.
+
+- **AI native.** We provide ChatGPT and Claude subscriptions, automate lab operations such as GPU management with AI agents, and encourage using AI in research.
+
+- **Stipend and workspace.** Students receive a competitive stipend and a comfortable individual workspace, including an ultrawide monitor and an adjustable standing desk.
+
+- **Flexible working hours.** We offer flexible working hours and unlimited time off, with an emphasis on ownership, trust, and sustained research progress.
+
+</div>
+
+<div class="callout callout-warm">
+
+## Open Position: InnoCORE Postdoctoral Researcher (2027)
+
+We are looking for a postdoctoral researcher who wants to pursue high-impact academic work. Our lab has broad research interests; if any part of our [Research Statement](/research-statement/) interests you, please let us know.
+
+- **Start date.** From January 2027; the start date is negotiable.
+- **Duration.** Up to 4 years.
+- **Salary.** KRW 90 million per year (including tax and insurance).
+- **Research funding.** Additional research funding is available.
+- **Location.** Full-time, on-site in Ulsan.
+- **Eligibility.** Within 5 years of receiving a Ph.D.; fresh Ph.D.s are welcome. International applicants are welcome.
+- **Background.** A strong background in generative modeling and reinforcement learning is expected. Interest in robotics or AI for science is a plus.
+- **Role.** You may supervise graduate students, or pursue your own research together with graduate students.
+
+</div>
+
+- Postdoctoral researchers
 - MS / PhD students
 - Research interns
 

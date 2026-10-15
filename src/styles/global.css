@@ -6,6 +6,8 @@
   --line: #e2e6ec;
   --accent: #1b4f8a;
   --accent-soft: #e8eff8;
+  --warm: #c27c0e;
+  --warm-soft: #fdf4e3;
   --radius: 10px;
   --maxw: 960px;
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -22,6 +24,8 @@
     --line: #2a313c;
     --accent: #7eb0ea;
     --accent-soft: #1d2a3b;
+    --warm: #e0a640;
+    --warm-soft: #2e2416;
     color-scheme: dark;
   }
 }
@@ -34,6 +38,11 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+}
+
+/* Keep anchor targets (e.g. /recruiting/#...) clear of the sticky header */
+:target {
+  scroll-margin-top: 5rem;
 }
 
 body {
@@ -131,6 +140,36 @@ figcaption {
   .prose .figure-row {
     flex-direction: column;
   }
+}
+/* Highlighted box. Usage in Markdown: <div class="callout"> (blank line) Markdown (blank line) </div>
+   Add "callout-warm" for the amber variant (e.g. job openings). */
+.callout {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0 2rem;
+}
+.callout-warm {
+  background: var(--warm-soft);
+  border-left-color: var(--warm);
+}
+.callout h2 {
+  margin-top: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.callout li {
+  margin: 0.5rem 0;
+}
+.callout li p {
+  margin: 0;
+}
+.callout > :first-child {
+  margin-top: 0;
+}
+.callout > :last-child {
+  margin-bottom: 0;
 }
 .prose ul {
   padding-left: 1.3rem;
