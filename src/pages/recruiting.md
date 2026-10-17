@@ -34,35 +34,39 @@ We are looking for a postdoctoral researcher who wants to pursue high-impact aca
 - **Duration.** Up to 4 years.
 - **Salary.** KRW 90 million per year (including tax and insurance).
 - **Research funding.** Additional research funding is available.
+- **Equipment.** An M5 MacBook Air 13" or equivalent work laptop is provided.
 - **Location.** Full-time, on-site in Ulsan.
-- **Eligibility.** Within 5 years of receiving a Ph.D.; fresh Ph.D.s are welcome. International applicants are welcome.
+- **Eligibility.** Within 5 years of receiving a PhD; fresh PhDs are welcome. International applicants are welcome.
 - **Background.** A strong background in generative modeling and reinforcement learning is expected. Interest in robotics or AI for science is a plus.
+- **Military service.** Eligible Korean applicants may serve as 전문연구요원 (alternative military service) in this position.
 - **Role.** You may supervise graduate students, or pursue your own research together with graduate students.
 
 </div>
 
+We are currently recruiting:
+
 - Postdoctoral researchers
-- MS / PhD students
+- PhD / Integrated MS-PhD students
 - Research interns
 
-If interested, please reach out to **swyoon at unist dot ac dot kr** with your CV.
+If you are interested, please reach out to **swyoon at unist dot ac dot kr** with your CV.
 
-## MS / PhD Students (2027 Fall)
+## Open Position: PhD or Integrated MS-PhD Students (2027 Fall)
 
 - Fully funded, on-site (Ulsan), full-time position
-- Please read the [Research Statement](/research-statement/) and the recently [published papers](/publications/)
+- Please read the [Research Statement](/research-statement/) and our recent [publications](/publications/)
 - You should express your strong interest in the problems we are solving
-- A strong applicant is expected to have the following (although not necessary):
+- Strong applicants typically have the following (not required):
   - Solid technical background in AI-related fields, such as mathematics, statistics, computer science, and engineering
-  - Research experience, ideally publication records at an AI-related venue (e.g., NeurIPS, ICML, ICLR, CVPR, etc)
-  - Fluent in English, proven by an official certificate or activity records
+  - Research experience, ideally a publication record at an AI-related venue (e.g., NeurIPS, ICML, ICLR, CVPR)
+  - Fluency in English, demonstrated by an official test score or relevant experience
 - Find more information about the application process at:
-  - Korean: <http://adm-g.unist.ac.kr/>
-  - English: <http://admg-intl.unist.ac.kr>
+  - Korean: <https://adm-g.unist.ac.kr/>
+  - English: <https://admg-intl.unist.ac.kr>
 
 ### (Potential) Research Topics
 
-- Actively exploring large language model agents
+- Large language model agents
 - Reinforcement learning for diffusion-based generative models
 - Post-training of robotics foundation models
 - Knowledge distillation as imitation learning
@@ -82,7 +86,7 @@ Yes, absolutely. AGA Lab highly values group diversity and actively works to fos
 
 ### Logistics
 
-- The internship lasts from three to six months, with the exact duration potentially varying.
+- The internship lasts three to six months; the exact duration is flexible.
 - The internship is full-time and on-site at UNIST in Ulsan, Republic of Korea. A salary will be provided.
 
 ### Selection

@@ -234,12 +234,32 @@ git push                       # or open a pull request
 
 ---
 
-## 5. Project layout
+## 5. Visitor statistics (GoatCounter)
+
+Page views are counted with [GoatCounter](https://www.goatcounter.com) (free, no cookies, so no consent banner is needed).
+
+- **Dashboard:** <https://agalab.goatcounter.com>. Log in with the lab's GoatCounter account.
+  It shows page views per page, referrers (where visitors came from), countries, browsers, and screen sizes.
+- **Where the script lives:** one `<script data-goatcounter=...>` tag in the `<head>` of `src/layouts/Base.astro`,
+  so every page is counted automatically. New pages need nothing extra.
+- **Not counted:** visits to `localhost` (`npm run dev` / `npm run preview`), and visitors with ad/tracker
+  blockers. Treat the numbers as a trend rather than an exact count.
+- **Excluding your own visits:** open <https://aga-lab-ai.github.io/#toggle-goatcounter> once in each
+  browser you use; GoatCounter then ignores that browser (open it again to undo).
+  Alternatively, add your IP under **Settings → Ignore IPs** in the dashboard.
+- **Sharing the statistics:** **Settings → Allow public access to dashboard** makes the dashboard viewable
+  without logging in.
+- **Switching to another site code or service:** replace the URL in the script tag in `Base.astro`.
+
+---
+
+## 6. Project layout
 
 ```
 src/
-├── data/                 # ← content: news.yaml, people.yaml, publications.bib, publication-filter.yaml
-├── pages/                # routes: index, people, publications, news (.astro); research-statement, recruiting (.md)
+├── data/                 # ← content: news.yaml, people.yaml, photos.yaml, publications.bib, publication-filter.yaml
+├── pages/                # routes: index, people, publications, news, photos (.astro); research-statement, recruiting (.md)
+├── assets/photos/        # lab photos (thumbnails generated at build time)
 ├── components/           # NewsList, PersonCard, PIProfile, PubItem, Links
 ├── layouts/              # Base (header/nav/footer), Page (for Markdown pages)
 ├── lib/                  # bibtex.ts (BibTeX → data), data.ts (queries), format.ts
