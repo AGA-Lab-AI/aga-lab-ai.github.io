@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { defineCollection } from 'astro:content';
-import { file, type Loader } from 'astro/loaders';
+import { file, glob, type Loader } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { parse as parseYaml } from 'yaml';
 import { CATEGORIES, isVisible, parseBibtex } from './lib/bibtex';
@@ -149,4 +149,14 @@ const publications = defineCollection({
   }),
 });
 
-export const collections = { news, people, photos, publications };
+const essays = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/essays' }),
+  schema: z.object({
+    title: z.string().min(1),
+    author: z.string().min(1),
+    date: z.iso.date(),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { news, people, photos, publications, essays };

@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EssayMeta from '../../components/EssayMeta.astro';
+const essays = (await getCollection('essays')).sort((a, b) =>
+  b.data.date.localeCompare(a.data.date) || a.id.localeCompare(b.id)
+);
+---
+<Base title="Essay" description="Essays on research, discovery, and beyond, from AGA Lab.">
+  <header class="essay-heading">
+    <h1>Essay</h1>
+    <p class="lead muted">Thoughts on research, discovery, and beyond.</p>
+  </header>
+  {essays.length ? (
+    <ul class="essay-list">
+      {essays.map((essay) => (
+        <li>
+          <article>
+            <h2><a href={`/essay/${essay.id}/`}>{essay.data.title}</a></h2>
+            <EssayMeta author={essay.data.author} date={essay.data.date} />
+            {essay.data.description && <p class="summary">{essay.data.description}</p>}
+            <a class="read-more" href={`/essay/${essay.id}/`} aria-label={`Read ${essay.data.title}`}>Read essay <span aria-hidden="true">→</span></a>
+          </article>
+        </li>
+      ))}
+    </ul>
+  ) : <p class="muted">No essays yet.</p>}
+</Base>
+<style>
+  .essay-heading { margin-bottom: 2rem; }
+  .essay-heading p { margin: 0; }
+  .essay-list { list-style: none; padding: 0; margin: 0; }
+  .essay-list li { border-top: 1px solid var(--line); padding: 1.75rem 0; }
+  .essay-list h2 { margin: 0; padding: 0; border: 0; font-size: 1.6rem; }
+  .summary { max-width: 68ch; margin: 1rem 0; }
+  .read-more { display: inline-block; margin-top: 1rem; font-size: 0.9rem; font-weight: 500; }
+</style>

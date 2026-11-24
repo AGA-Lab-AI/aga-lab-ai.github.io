@@ -13,6 +13,7 @@ Content lives in three plain-text files, so adding news, papers, or members neve
 | Lab photos | `src/data/photos.yaml` (+ images in `src/assets/photos/`) |
 | Research statement | `src/pages/research-statement.md` |
 | Recruiting | `src/pages/recruiting.md` |
+| Essays | `src/content/essays/*.md` (title, author, date, and Markdown body) |
 
 ---
 
@@ -218,6 +219,26 @@ Edit `src/pages/research-statement.md` or `src/pages/recruiting.md` as normal Ma
 Images go in `public/images/site/` and are referenced as `![alt text](/images/site/file.jpg)`.
 
 ---
+
+### 3.6 Essay → `src/content/essays/*.md`
+
+Create one Markdown file per essay. The filename becomes its permanent URL, e.g.
+`on-discovery.md` → `/essay/on-discovery/`.
+
+```markdown
+---
+title: On discovery
+author: Sangwoong Yoon
+date: '2026-11-11'  # required: YYYY-MM-DD, quoted
+description: An optional short summary for the list and page metadata.
+---
+
+Write the essay here in Markdown.
+```
+
+The Essay menu opens `/essay/`, listing posts newest first with their author and
+publication date. Each title opens a dedicated reading page. Adding a Markdown
+file is enough; no route or navigation edits are needed for subsequent posts.
 
 ## 4. Publishing changes
 

@@ -1,0 +1,35 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EssayMeta from '../../components/EssayMeta.astro';
+export async function getStaticPaths() {
+  return (await getCollection('essays')).map((essay) => ({
+    params: { id: essay.id }, props: { essay },
+  }));
+}
+interface Props { essay: CollectionEntry<'essays'>; }
+const { essay } = Astro.props;
+const { Content } = await render(essay);
+---
+<Base title={essay.data.title} description={essay.data.description}>
+  <article class="essay-article">
+    <a class="back-link" href="/essay/">← All essays</a>
+    <header>
+      <h1>{essay.data.title}</h1>
+      <EssayMeta author={essay.data.author} date={essay.data.date} />
+    </header>
+    <div class="prose essay-body"><Content /></div>
+  </article>
+</Base>
+<style>
+  .essay-article { max-width: 72ch; margin-inline: auto; }
+  .back-link { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; }
+  header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+  h1 { overflow-wrap: anywhere; }
+  .essay-body { font-size: 1.08rem; line-height: 1.9; overflow-wrap: anywhere; }
+  .essay-body :global(p) { margin: 0 0 1.4rem; }
+  .essay-body :global(pre) { overflow-x: auto; padding: 1rem; border-radius: var(--radius); }
+  @media (max-width: 640px) {
+    .essay-body { font-size: 1rem; line-height: 1.8; }
+  }
+</style>
