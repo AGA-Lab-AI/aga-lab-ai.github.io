@@ -230,14 +230,15 @@ Create one Markdown file per essay. The filename becomes its permanent URL, e.g.
 title: On discovery
 author: Sangwoong Yoon
 date: '2026-11-11'  # required: YYYY-MM-DD, quoted
-description: An optional short summary for the list and page metadata.
+description: An optional short summary for page metadata.
 ---
 
 Write the essay here in Markdown.
 ```
 
 The Essay menu opens `/essay/`, listing posts newest first with their author and
-publication date. Each title opens a dedicated reading page. Adding a Markdown
+publication date and an automatic two-line preview of the opening body text.
+Each title opens a dedicated reading page. Adding a Markdown
 file is enough; no route or navigation edits are needed for subsequent posts.
 
 ## 4. Publishing changes

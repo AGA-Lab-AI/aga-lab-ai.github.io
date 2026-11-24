@@ -1,10 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
+import { Lexer, type Token } from 'marked';
 import Base from '../../layouts/Base.astro';
 import EssayMeta from '../../components/EssayMeta.astro';
 const essays = (await getCollection('essays')).sort((a, b) =>
   b.data.date.localeCompare(a.data.date) || a.id.localeCompare(b.id)
 );
+// Use the opening body text, not an optional hand-written description.
+function plainText(tokens: Token[]): string {
+  return tokens.map((token) => {
+    if (token.type === 'html') return '';
+    if ('tokens' in token && token.tokens) return plainText(token.tokens);
+    if ('text' in token) return token.text;
+    return token.type === 'br' ? ' ' : '';
+  }).join('');
+}
+const preview = (body: string) => Lexer.lex(body).map((token) => plainText([token])).join(' ').replace(/\s+/g, ' ').trim();
 ---
 <Base title="Essay" description="Essays on research, discovery, and beyond, from AGA Lab.">
   <header class="essay-heading">
@@ -18,7 +29,7 @@ const essays = (await getCollection('essays')).sort((a, b) =>
           <article>
             <h2><a href={`/essay/${essay.id}/`}>{essay.data.title}</a></h2>
             <EssayMeta author={essay.data.author} date={essay.data.date} />
-            {essay.data.description && <p class="summary">{essay.data.description}</p>}
+            <p class="summary">{preview(essay.body ?? '')}</p>
             <a class="read-more" href={`/essay/${essay.id}/`} aria-label={`Read ${essay.data.title}`}>Read essay <span aria-hidden="true">→</span></a>
           </article>
         </li>
@@ -32,6 +43,15 @@ const essays = (await getCollection('essays')).sort((a, b) =>
   .essay-list { list-style: none; padding: 0; margin: 0; }
   .essay-list li { border-top: 1px solid var(--line); padding: 1.75rem 0; }
   .essay-list h2 { margin: 0; padding: 0; border: 0; font-size: 1.6rem; }
-  .summary { max-width: 68ch; margin: 1rem 0; }
+  .summary {
+    max-width: 68ch;
+    margin: 1rem 0 0;
+    color: var(--muted);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
   .read-more { display: inline-block; margin-top: 1rem; font-size: 0.9rem; font-weight: 500; }
 </style>
